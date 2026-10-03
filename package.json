@@ -1,0 +1,16 @@
+{
+  "name": "sistema-necesidades-ti",
+  "version": "1.0.0",
+  "description": "Sistema de Levantamiento y Gestión de Necesidades de Sistemas para Departamentos",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["it", "sistemas", "necesidades", "soporte", "formulario"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}

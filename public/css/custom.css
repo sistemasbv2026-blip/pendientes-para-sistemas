@@ -1,0 +1,54 @@
+/* Estilos personalizados para el Sistema de Necesidades de TI */
+
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --secondary: #0f172a;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f8fafc;
+}
+
+/* Transiciones suaves */
+.transition-card {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+}
+
+/* Tarjeta de categoría seleccionada */
+.category-card input[type="radio"]:checked + .category-content {
+  border-color: #2563eb;
+  background-color: #eff6ff;
+  box-shadow: 0 0 0 2px #2563eb;
+}
+
+.category-card input[type="radio"]:checked + .category-content .icon-wrapper {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+/* Tarjeta de prioridad seleccionada */
+.priority-card input[type="radio"]:checked + .priority-content {
+  border-color: currentColor;
+  box-shadow: 0 0 0 2px currentColor;
+}
+
+/* Estilo para impresión */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background-color: #ffffff !important;
+  }
+  .print-clean {
+    border: none !important;
+    box-shadow: none !important;
+  }
+}

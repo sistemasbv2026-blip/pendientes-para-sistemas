@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buzón de Necesidades - Departamento de Sistemas</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col justify-between bg-slate-50">
+
+  <!-- ENCABEZADO -->
+  <header class="bg-gradient-to-r from-blue-700 via-indigo-700 to-slate-900 text-white shadow-md sticky top-0 z-40">
+    <div class="max-w-3xl mx-auto px-4 py-4 sm:px-6 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
+          <i class="fa-solid fa-laptop-code text-xl text-blue-200"></i>
+        </div>
+        <div>
+          <h1 class="font-bold text-lg leading-tight tracking-tight">Departamento de Sistemas / TI</h1>
+          <p class="text-xs text-blue-200">Buzón de Solicitudes y Necesidades</p>
+        </div>
+      </div>
+      <div>
+        <a href="admin.html" class="inline-flex items-center space-x-1.5 text-xs bg-white/10 hover:bg-white/20 transition px-3 py-1.5 rounded-lg border border-white/20 text-blue-100 font-medium">
+          <i class="fa-solid fa-lock text-[10px]"></i>
+          <span class="hidden sm:inline">Panel TI</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- BANNER INTRODUCTORIO -->
+  <div class="pt-6 pb-2">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+        ¿Qué necesita tu departamento?
+      </h2>
+      <p class="mt-2 text-sm text-slate-600">
+        Escribe con tus propias palabras qué herramientas, equipos, programas o mejoras de sistemas necesitas para trabajar mejor.
+      </p>
+    </div>
+  </div>
+
+  <!-- CONTENIDO / FORMULARIO SIMPLE -->
+  <main class="max-w-2xl mx-auto px-4 sm:px-6 py-6 w-full">
+    <form id="needsForm" class="space-y-6 bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
+      
+      <!-- 1. DATOS RÁPIDOS DEL SOLICITANTE -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        
+        <!-- Nombre -->
+        <div class="sm:col-span-2">
+          <label for="nombre" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            Tu Nombre Completo <span class="text-rose-500">*</span>
+          </label>
+          <input type="text" id="nombre" name="nombre" required placeholder="Escribe tu nombre y apellido..."
+            class="w-full px-3.5 py-2.5 text-sm rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-slate-50/50 focus:bg-white">
+        </div>
+
+        <!-- Departamento -->
+        <div>
+          <label for="departamento" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            Tu Departamento o Área <span class="text-rose-500">*</span>
+          </label>
+          <select id="departamento" name="departamento" required
+            class="w-full px-3.5 py-2.5 text-sm rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-slate-50/50 focus:bg-white">
+            <option value="" disabled selected>Selecciona tu área...</option>
+            <option value="Administración y Finanzas">Administración y Finanzas</option>
+            <option value="Contabilidad">Contabilidad</option>
+            <option value="Ventas y Comercial">Ventas y Comercial</option>
+            <option value="Recursos Humanos">Recursos Humanos</option>
+            <option value="Operaciones y Logística">Operaciones y Logística</option>
+            <option value="Compras">Compras</option>
+            <option value="Almacén e Inventarios">Almacén e Inventarios</option>
+            <option value="Producción">Producción</option>
+            <option value="Calidad">Calidad</option>
+            <option value="Atención al Cliente">Atención al Cliente</option>
+            <option value="Marketing y Diseño">Marketing y Diseño</option>
+            <option value="Dirección General">Dirección General</option>
+            <option value="Otro">Otro departamento</option>
+          </select>
+        </div>
+
+        <!-- Teléfono / Extensión o Correo -->
+        <div>
+          <label for="contacto" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            Teléfono, Extensión o Correo
+          </label>
+          <input type="text" id="contacto" name="contacto" placeholder="Extensión, celular o correo..."
+            class="w-full px-3.5 py-2.5 text-sm rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-slate-50/50 focus:bg-white">
+        </div>
+      </div>
+
+      <hr class="border-slate-100">
+
+      <!-- 2. ESPACIO PRINCIPAL PARA ESCRIBIR LIBREMENTE -->
+      <div class="space-y-5">
+        
+        <!-- Cuadro principal para escribir la necesidad -->
+        <div>
+          <div class="flex items-center justify-between mb-1.5">
+            <label for="descripcion" class="block text-sm font-bold text-slate-800">
+              ¿Qué necesitas o qué problema tienes con sistemas? <span class="text-rose-500">*</span>
+            </label>
+          </div>
+          <p class="text-xs text-slate-500 mb-2">
+            Escribe con tus propias palabras todo lo que consideres necesario (computadoras lentas, impresoras, internet, programas, licencias, carpetas, automatización de tareas, etc.):
+          </p>
+          <textarea id="descripcion" name="descripcion" rows="5" required
+            placeholder="Escribe aquí con detalle lo que te hace falta o lo que te está fallando en tu área..."
+            class="w-full p-3.5 text-sm rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-slate-50/50 focus:bg-white leading-relaxed"></textarea>
+        </div>
+
+        <!-- Cuadro secundario: ¿En qué te ayudaría resolverlo? -->
+        <div>
+          <label for="beneficioEsperado" class="block text-sm font-bold text-slate-800 mb-1.5">
+            ¿En qué te ayudaría o qué beneficio traería solucionar esto?
+          </label>
+          <textarea id="beneficioEsperado" name="beneficioEsperado" rows="3"
+            placeholder="Por ejemplo: Ahorraría 2 horas diarias al sacar reportes, evitaría que se nos caigan las llamadas con clientes, nos permitiría entregar pedidos más rápido..."
+            class="w-full p-3.5 text-sm rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-slate-50/50 focus:bg-white leading-relaxed"></textarea>
+        </div>
+
+        <!-- Selector simple de Urgencia -->
+        <div>
+          <label for="prioridad" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            ¿Qué tan urgente es para tu trabajo?
+          </label>
+          <select id="prioridad" name="prioridad"
+            class="w-full sm:w-64 px-3.5 py-2.5 text-sm rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-slate-50/50 focus:bg-white">
+            <option value="Media" selected>🟡 Normal (Afecta la comodidad o el tiempo)</option>
+            <option value="Baja">🟢 Baja (Mejora deseable a futuro)</option>
+            <option value="Alta">🟠 Alta (Dificulta el trabajo del día a día)</option>
+            <option value="Crítica">🔴 Urgente (Trabajo detenido o clientes afectados)</option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- BOTÓN DE ENVÍO -->
+      <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-xs text-slate-400 text-center sm:text-left">
+          <i class="fa-solid fa-check-circle text-emerald-500 mr-1"></i> El equipo de sistemas revisará tu requerimiento.
+        </p>
+        <button type="submit" id="btnSubmit"
+          class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-8 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold text-sm shadow-md hover:shadow-lg transition transform active:scale-95 cursor-pointer">
+          <i class="fa-solid fa-paper-plane"></i>
+          <span>Enviar lo que necesito</span>
+        </button>
+      </div>
+    </form>
+  </main>
+
+  <!-- MODAL DE ÉXITO -->
+  <div id="successModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 text-center shadow-2xl border border-slate-100 transform transition-all">
+      <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl shadow-inner">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <h3 class="text-xl font-bold text-slate-900">¡Muchas Gracias por Escribirnos!</h3>
+      <p class="text-sm text-slate-600 mt-2">
+        Hemos registrado lo que necesitas. Tu número de folio de seguimiento es:
+      </p>
+      
+      <div class="my-4 p-3.5 bg-slate-100 rounded-xl border border-dashed border-slate-300">
+        <span class="text-xs uppercase tracking-wider text-slate-500 block">Número de Folio</span>
+        <span id="ticketFolio" class="text-xl font-extrabold text-blue-600 tracking-wider">SOL-2026-000</span>
+      </div>
+
+      <p class="text-xs text-slate-500 mb-6">
+        El área de Sistemas evaluará tu requerimiento y te dará seguimiento a la brevedad.
+      </p>
+
+      <div class="flex flex-col gap-2">
+        <button id="btnNuevaSolicitud" class="w-full py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm transition shadow">
+          Escribir Otra Necesidad
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="bg-slate-900 text-slate-400 py-6 text-xs text-center border-t border-slate-800">
+    <div class="max-w-3xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p>© Departamento de Sistemas e Informática.</p>
+      <div class="flex items-center space-x-4">
+        <a href="admin.html" class="hover:text-white transition flex items-center space-x-1">
+          <i class="fa-solid fa-user-shield"></i>
+          <span>Panel de Sistemas (TI)</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script src="js/app.js"></script>
+</body>
+</html>
