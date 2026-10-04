@@ -68,7 +68,12 @@ async function loadSolicitudes() {
 // Poblar selector de departamentos dinámicamente
 function populateDepartmentFilter() {
   const filterDept = document.getElementById('filterDept');
-  const depts = new Set();
+  const depts = new Set([
+    "Recursos Humanos", "Finanzas", "Mantenimiento", "Front Desk",
+    "Reservas", "Eventos", "Banquetes", "Cocina", "Criollo",
+    "Tai Kai", "Faro", "Chiringuito", "Duna", "Puntarena",
+    "Mansa", "BV Food Service", "Housekeeping", "Seguridad", "Golf"
+  ]);
   allSolicitudes.forEach(s => {
     if (s.departamento) depts.add(s.departamento);
   });
