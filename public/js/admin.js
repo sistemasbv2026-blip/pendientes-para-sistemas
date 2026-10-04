@@ -69,10 +69,11 @@ async function loadSolicitudes() {
 function populateDepartmentFilter() {
   const filterDept = document.getElementById('filterDept');
   const depts = new Set([
-    "Recursos Humanos", "Finanzas", "Mantenimiento", "Front Desk",
+    "Recursos Humanos", "Finanzas", "Mantenimiento", "Front Desk", "Botones",
     "Reservas", "Eventos", "Banquetes", "Cocina", "Criollo",
     "Tai Kai", "Faro", "Chiringuito", "Duna", "Puntarena",
-    "Mansa", "BV Food Service", "Housekeeping", "Seguridad", "Golf"
+    "Mansa", "Palapa", "Tagua", "Lobby Bar", "BV Food Service",
+    "Housekeeping", "Seguridad", "Golf"
   ]);
   allSolicitudes.forEach(s => {
     if (s.departamento) depts.add(s.departamento);
