@@ -20,61 +20,7 @@ if (!fs.existsSync(DATA_DIR)) {
 }
 
 if (!fs.existsSync(DATA_FILE)) {
-  // Datos iniciales de demostración opcionales
-  const initialData = [
-    {
-      id: "SOL-2026-001",
-      nombre: "María Fernanda González",
-      departamento: "Contabilidad y Finanzas",
-      correo: "maria.gonzalez@empresa.com",
-      telefono: "Ext. 204",
-      puesto: "Jefa de Contabilidad",
-      categoria: "Hardware",
-      prioridad: "Alta",
-      titulo: "Computadora lenta al procesar cierres de mes y facturación",
-      descripcion: "El equipo actual cuenta con poca memoria RAM y tarda más de 20 minutos en abrir los libros contables y sistemas de facturación SAT. Se congela constantemente.",
-      personasAfectadas: "Equipo (2 a 5 personas)",
-      beneficioEsperado: "Reducir a la mitad el tiempo de timbrado y evitar retrasos en declaraciones fiscales.",
-      estado: "En Análisis",
-      notasTI: "Se evaluará aumento de memoria RAM a 16GB o reemplazo por equipo i5/Ryzen 5 con SSD.",
-      fecha: new Date(Date.now() - 86400000 * 2).toISOString()
-    },
-    {
-      id: "SOL-2026-002",
-      nombre: "Carlos Eduardo Méndez",
-      departamento: "Ventas y Comercial",
-      correo: "carlos.mendez@empresa.com",
-      telefono: "Ext. 115",
-      puesto: "Coordinador de Ventas",
-      categoria: "Red y Comunicaciones",
-      prioridad: "Crítica",
-      titulo: "Mala señal de WiFi y desconexiones continuas en sala de juntas",
-      descripcion: "Durante las videollamadas con clientes importantes la red se desconecta o la imagen se congela. El punto de acceso actual no cubre bien la sala de juntas principal.",
-      personasAfectadas: "Todo el departamento",
-      beneficioEsperado: "Garantizar reuniones fluidas con clientes y no perder presentaciones comerciales.",
-      estado: "En Proceso",
-      notasTI: "Se programó instalación de Access Point dedicado en la sala de juntas el próximo martes.",
-      fecha: new Date(Date.now() - 86400000 * 1).toISOString()
-    },
-    {
-      id: "SOL-2026-003",
-      nombre: "Lucía Paredes",
-      departamento: "Recursos Humanos",
-      correo: "lucia.paredes@empresa.com",
-      telefono: "Ext. 302",
-      puesto: "Generalista de RH",
-      categoria: "Automatización",
-      prioridad: "Media",
-      titulo: "Sistema para registro de incidencias y vacaciones de personal",
-      descripcion: "Actualmente llevamos las solicitudes de vacaciones y permisos en hojas de papel y Excel compartido, lo que genera errores y traspapelado de documentos.",
-      personasAfectadas: "Toda la empresa",
-      beneficioEsperado: "Automatizar el flujo de aprobación digital de vacaciones para que jefes aprueben por correo o portal.",
-      estado: "Pendiente",
-      notasTI: "",
-      fecha: new Date().toISOString()
-    }
-  ];
-  fs.writeFileSync(DATA_FILE, JSON.stringify(initialData, null, 2), 'utf-8');
+  fs.writeFileSync(DATA_FILE, '[]', 'utf-8');
 }
 
 // Funciones auxiliares para leer y escribir
